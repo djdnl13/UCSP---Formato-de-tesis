@@ -1,0 +1,69 @@
+\documentclass[a4paper,openany,12pt]{book}
+\usepackage{graphicx}
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{sty/fancyhdr}
+\usepackage{ae}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2cm]{geometry}
+\usepackage[printonlyused]{acronym}
+\usepackage{xspace}
+\usepackage{sty/hlundef}
+\usepackage{sty/tesis}
+\usepackage{setspace}
+
+\title{Título de la Tesis}
+
+\author{Apellidos y nombres del Alumno}
+
+\advisor{Prof Dr./Mag./Ing. Nombre del Asesor}
+
+\examinerone{Prof. Dr. Hidalgo Buena Gente}{Presidente}%
+\examinertwo{Prof. Dr. Manuel Armando Líos}{Secretario}%
+\examinerthree{Prof. Dr. Antero A. Gal Oppe}{Integrante}%
+\examinerfour{Prof. Dr. Casso E. Staria}{Externo}{Universidad del ABC} % of being the case
+\date{30 de Junio del 2004}
+\date{\today}
+
+\dedicado{Aquí deberás colocar a quien va dedicada tu tesis por ejemplo: A Dios, por todo lo que me ha dado, a todos los profesores por sus enseñanzas y algunos amigos.}
+
+\begin{document}
+\pagestyle{fancy}
+
+\maketitle %Compone la carátula y la dedicatoria
+\newpage
+
+\approved{\cuatro}%  {\tres} or {\cuatro}
+
+\include{abreviaturas}
+
+\input{Agradecimientos} %Inserta los agradecimientos
+\input{Resumen} %Inserta el resumen
+\input{Abstract} %Inserta el abstract
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{plain}
+
+\tableofcontents %Inserta el índice general
+\listoftables %Inserta el índice de cuadros
+\listoffigures %Inserta el índice de figuras
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%   En esta parte deberas incluir los archivos de tu tesis   %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{Cap_1} %Inserta el capítulo 1
+\input{Cap_2} %Inserta el capítulo 2
+\input{Cap_3} %Inserta el capítulo 3
+\input{Cap_4} %Inserta el capítulo 4
+\input{conclusiones} %Inserta el capítulo 5
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apalike}
+\bibliography{Bibliog}
+\addcontentsline{toc}{chapter}{Bibliografía}
+\end{document}
